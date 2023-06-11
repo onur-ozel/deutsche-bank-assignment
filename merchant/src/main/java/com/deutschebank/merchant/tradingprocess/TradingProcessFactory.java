@@ -10,7 +10,7 @@ public class TradingProcessFactory {
       case Three:
         return new SignalThreeProcess();
       default:
-        return new DefaultTradingProcess();
+        return new DefaultProcess();
     }
   }
 }
