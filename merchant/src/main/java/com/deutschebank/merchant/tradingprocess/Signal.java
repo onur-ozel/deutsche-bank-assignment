@@ -27,7 +27,9 @@ public enum Signal {
       .stream(Signal.values()).collect(Collectors.toMap(Signal::getValue, Function.identity()));
 
   public static Signal fromInt(final Integer id) {
-    logger.info("Undefined signal type, signal id:" + id);
+    if (!reverseLookup.containsKey(id)) {
+      logger.info("Undefined signal type, signal id:" + id);        
+    }
     return reverseLookup.getOrDefault(id, Undefined);
   }
 }
