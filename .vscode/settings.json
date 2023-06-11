@@ -1,0 +1,5 @@
+{
+    "java.checkstyle.configuration": "${workspaceFolder}/merchant/config/checkstyle/checkstyle.xml",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.checkstyle.version": "10.12.0"
+}
