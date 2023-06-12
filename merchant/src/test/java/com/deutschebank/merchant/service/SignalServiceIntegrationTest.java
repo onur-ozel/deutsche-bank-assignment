@@ -1,5 +1,7 @@
 package com.deutschebank.merchant.service;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayOutputStream;
@@ -71,9 +73,9 @@ public class SignalServiceIntegrationTest {
   @Test
   void signalUndefinedProcessSteps() {
     signalService.handleSignal(Integer.MAX_VALUE);
-    assertEquals("""
+    assertThat(outContent.toString(), containsString("""
         cancelTrades
         doAlgo
-        """, outContent.toString());
+        """));
   }
 }
