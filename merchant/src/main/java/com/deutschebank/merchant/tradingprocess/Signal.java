@@ -22,7 +22,7 @@ public enum Signal {
     return value;
   }
 
-  private static Map<Integer, Signal> reverseLookup =
+  private static final Map<Integer, Signal> reverseLookup =
       Arrays
       .stream(Signal.values()).collect(Collectors.toMap(Signal::getValue, Function.identity()));
 
